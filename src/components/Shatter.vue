@@ -30,7 +30,8 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@import "@/scss/mixin";
 .shatter {
   margin: 0 auto;
   padding: 0;
@@ -38,6 +39,10 @@ export default {
   max-width: 1440px;
   width: 100%;
   background-color: #171c1f;
+
+  @include for-tablet-landscape {
+    padding-top: 90px;
+  }
 }
 .container {
   display: flex;
@@ -52,6 +57,12 @@ export default {
   width: 100%;
   height: 680px;
   margin-left: 3px;
+
+  @include for-tablet-landscape {
+    max-width: 370px;
+    width: 100%;
+    height: 530px;
+  }
 }
 .shatter-text {
   max-width: 550px;
@@ -65,25 +76,48 @@ export default {
   font-size: 75px;
   line-height: 1px;
   letter-spacing: 9px;
+
+  @include for-tablet-landscape {
+    font-size: 47px;
+  }
 }
 .cinema-subtitle {
+  font-family: "Roboto", sans-serif;
   font-size: 40px;
   line-height: 54px;
   color: #fff;
+
+  @include for-tablet-landscape {
+    font-size: 30px;
+  }
 }
 .shatter-text__subtitle {
   padding-top: 30px;
   text-align: start;
+
+  @include for-tablet-landscape {
+    padding-top: 10px;
+  }
 }
 .shatter-description {
   font-size: 14px;
   line-height: 28px;
   color: #fff;
   letter-spacing: 1px;
+  font-family: "Roboto", sans-serif;
+
+  @include for-tablet-landscape {
+    font-size: 12px;
+  }
 }
 .cinema-text__description {
   max-width: 570px;
   width: 100%;
   text-align: start;
+
+  @include for-tablet-landscape {
+    max-width: 450px;
+    width: 100%;
+  }
 }
 </style>

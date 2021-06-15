@@ -25,9 +25,7 @@
           </ul>
         </div>
         <div class="btn">
-          <button class="buy" value="111001" name="name" type="submit">
-            Buy a set
-          </button>
+          <a class="buy" href="#1"> Buy a set </a>
         </div>
       </div>
     </div>
@@ -40,7 +38,8 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@import "@/scss/mixin";
 .footer {
   margin: 0 auto;
   padding: 0;
@@ -60,12 +59,18 @@ export default {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+
+  @include for-tablet-landscape {
+    text-align: center;
+    margin: 0 auto;
+  }
 }
 .logo-text {
   font-size: 18px;
   line-height: 28px;
   padding-left: 30px;
   color: #181d20;
+  font-family: "Roboto", sans-serif;
 }
 .container-menu__footer {
   display: flex;
@@ -87,6 +92,10 @@ export default {
   justify-content: space-between;
   align-items: center;
   text-decoration: none;
+
+  @include for-tablet-landscape {
+    display: none;
+  }
 }
 .burger-text__first {
   list-style-type: none;
@@ -110,11 +119,16 @@ export default {
   width: 100%;
   border: 1px solid #181d20;
   border-radius: 5px;
-  padding: 10px 35px;
+  padding: 15px 35px;
   font-size: 16px;
   line-height: 28px;
   color: #181d20;
   background-color: #fff;
+  text-decoration: none;
+
+  @include for-tablet-landscape {
+    display: none;
+  }
 }
 .buy:hover {
   color: #fdc400;

@@ -6,7 +6,10 @@
           <a href="header"> <img src="/img/Logo.svg" alt="img" /></a>
           <h3 class="logo-text">MOMENT OF AIR</h3>
         </div>
-        <div class="burder-menu">
+        <div class="burder-menu active" id="menu">
+          <div class="navigation-menu__burger" id="burger">
+            <span></span>
+          </div>
           <ul class="burger-container">
             <li class="burger-text__first">
               <a class="burger-title" href="#header">Features</a>
@@ -23,9 +26,7 @@
           </ul>
         </div>
         <div class="btn">
-          <button class="buy" value="111001" name="name" type="submit">
-            Buy a set
-          </button>
+          <a class="buy" href="#1"> Buy a set </a>
         </div>
       </div>
 
@@ -38,10 +39,10 @@
             </h2>
           </div>
           <div class="button-buy">
-            <button class="buy-set">Buy a set</button>
+            <a class="buy-set" href="#">Buy a set</a>
             <span class="buy-quashen">How do we deliver?</span>
             <div class="icon-more">
-              <a href="#" class="more .icon-more">
+              <a href="#1" class="more .icon-more">
                 <img class="more" src="/img/more.svg" alt="" />
               </a>
             </div>
@@ -49,23 +50,45 @@
         </div>
       </div>
     </div>
-    <div class="scroll-container">
-      <a href="#second" class="srolls">
-        <img class="scroll" src="/img/scroll.svg" alt="" />
-      </a>
+    <div class="position">
+      <div class="scroll-container">
+        <a href="#second" class="srolls">
+          <img class="scroll" src="/img/scroll.svg" alt="" />
+        </a>
+      </div>
     </div>
-    <!-- <div class="fon"></div>
-    <div class="fon2"></div> -->
   </header>
 </template>
 
 <script>
 export default {
   name: "Header",
+
+  // data() {
+  //   const menu = document.getElementById("menu");
+  //   const burger = document.getElementById("burger");
+
+  //   burger.onclick = () => {
+  //     menu.classList.toggle("active");
+  //   };
+  // },
 };
 </script>
 
-<style scoped>
+<style lang='scss' scoped>
+@import "@/scss/mixin";
+
+.position {
+  max-width: 1440px;
+  width: 100%;
+  height: 90px;
+  display: flex;
+  justify-content: flex-end;
+
+  @include for-desktop {
+    display: none;
+  }
+}
 .header {
   margin: 0 auto;
   padding: 0;
@@ -82,7 +105,7 @@ export default {
   align-items: center;
 }
 .logo-text {
-  font-size: 18px;
+  font-family: "Roboto", sans-serif;
   line-height: 28px;
   padding-left: 30px;
   color: #fff;
@@ -108,6 +131,10 @@ export default {
   align-items: center;
   text-decoration: none;
   margin-left: 100px;
+
+  @include for-tablet-landscape {
+    margin-left: 20px;
+  }
 }
 .burger-menu {
   position: absolute;
@@ -118,21 +145,36 @@ export default {
 }
 .burger-text__first {
   list-style-type: none;
+
+  @include for-tablet-landscape {
+    padding-left: 40px;
+    padding-bottom: 10px;
+  }
 }
 .burger-text {
   padding-left: 80px;
   list-style-type: none;
   z-index: 5;
+
+  @include for-tablet-landscape {
+    padding-left: 40px;
+    padding-bottom: 10px;
+  }
 }
 .burger-title:hover {
   color: #fdc400;
   border-bottom: 1px solid #fdc400;
 }
 .burger-title {
+  font-family: "Roboto", sans-serif;
   text-decoration: none;
   color: #fff;
   font-size: 14px;
   line-height: 28px;
+
+  @include for-tablet-landscape {
+    font-size: 18px;
+  }
 }
 .btn {
   z-index: 10;
@@ -142,12 +184,18 @@ export default {
   width: 100%;
   border: 1px solid #fdc400;
   border-radius: 5px;
-  padding: 10px 35px;
+  padding: 15px 35px;
   font-size: 16px;
   line-height: 28px;
   color: #fff;
   background-color: #161b1e;
+  text-decoration: none;
   z-index: 10;
+  font-family: "Roboto", sans-serif;
+
+  @include for-tablet-landscape {
+    display: none;
+  }
 }
 .buy:hover {
   background-color: #fdc400;
@@ -193,6 +241,13 @@ export default {
   line-height: 1px;
   letter-spacing: 9px;
   z-index: 15;
+
+  @include for-tablet-landscape {
+    font-size: 47px;
+  }
+  @media (max-width: 727) {
+    font-size: 47px;
+  }
 }
 .tittle-second {
   position: relative;
@@ -202,11 +257,20 @@ export default {
   z-index: 15;
 }
 .tittle-text__second {
+  font-family: "Roboto", sans-serif;
   font-size: 58px;
   color: #fff;
   padding-top: 40px;
   letter-spacing: 3px;
   z-index: 20;
+
+  @include for-tablet-landscape {
+    font-size: 30px;
+    padding-top: 30px;
+  }
+  @include for-tablet-portrait {
+    font-size: 20px;
+  }
 }
 .button-buy {
   display: flex;
@@ -214,16 +278,18 @@ export default {
   align-items: center;
 }
 .buy-set {
+  display: block;
   max-width: 160px;
-  width: 100%;
   border-radius: 5px;
-  padding: 10px 35px;
+  padding: 12px 35px;
   font-size: 16px;
   line-height: 28px;
   background: #fdc400;
   color: #171717;
   border: 0;
+  text-decoration: none;
   z-index: 25;
+  font-family: "Roboto", sans-serif;
 }
 .buy-set:hover {
   background: #fcde7b;
@@ -234,24 +300,109 @@ export default {
   line-height: 28px;
   margin-left: 40px;
   z-index: 30;
+  font-family: "Roboto", sans-serif;
 }
 .icon-more {
   margin-left: 20px;
   z-index: 35;
 }
-.more:hover {
-  box-shadow: -1px -1px 18px 12px rgba(54, 164, 249, 0.2);
+
+.more {
+  margin-left: 10px;
+
+  @include for-tablet-landscape {
+    width: 30px;
+  }
 }
+// .more:hover {
+//   box-shadow: -1px -1px 18px 12px rgba(255, 255, 255, 0.2);
+// }
 .scroll-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
-  left: 1340px;
+  // position: relative;
   right: 0;
   max-width: 100px;
   width: 100%;
   height: 100px;
   background-color: #161b1e;
+
+  @include for-tablet-landscape {
+    visibility: hidden;
+  }
+
+  @include for-tablet-portrait {
+    visibility: hidden;
+  }
 }
+// .burder-menu {
+//   &__burger {
+//     display: none;
+//     width: 42px;
+//     height: 35px;
+//     background-color: transparent;
+//     position: relative;
+//     z-index: 5;
+//     transition: all 0.3s ease-in-out;
+//     span {
+//       position: absolute;
+//       top: 50%;
+//       transform: translateY(-50%);
+//       width: 100%;
+//       height: 4px;
+//       background-color: #fff;
+//     }
+//     &::before,
+//     &::after {
+//       content: "";
+//       position: absolute;
+//       width: 100%;
+//       height: 4px;
+//       background-color: #fff;
+//     }
+//     &::before {
+//       top: 0;
+//     }
+//     &::after {
+//       bottom: 0;
+//     }
+//     @media (max-width: 767px) {
+//       display: block;
+//     }
+//   }
+// }
+// @media (max-width: 767px) {
+//   .burder-menu .active {
+//     .navigation-menu__burger {
+//       span {
+//         display: none;
+//       }
+//       &::before {
+//         top: 50%;
+//         transform: translateY(-50%) rotate(45deg);
+//       }
+//       &::after {
+//         bottom: 50%;
+//         transform: translateY(50%) rotate(-45deg);
+//       }
+//     }
+//     .burger-container {
+//       display: block;
+//       position: absolute;
+//       max-width: 767px;
+//       width: 100%;
+//       min-height: 20vh;
+//       top: -18px;
+//       right: 0;
+//       background-color: rgba(49, 43, 39, 0.9);
+
+//       @media (max-width: 1237px) {
+//         .burger-menu__container {
+//           max-width: 500px;
+//         }
+//       }
+//     }
+//   }
+// }
 </style>

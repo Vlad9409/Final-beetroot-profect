@@ -14,7 +14,7 @@
             <h3 class="price-real">200 USD</h3>
             <h3 class="price-before">270 USD</h3>
           </div>
-          <button class="buy-set">Buy a set</button>
+          <a class="buy-set" href="#1">Buy a set</a>
         </div>
       </div>
     </div>
@@ -27,7 +27,8 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@import "@/scss/mixin";
 .color-text {
   color: #fdc400;
 }
@@ -51,6 +52,12 @@ export default {
   max-width: 560px;
   width: 100%;
   height: 362px;
+
+  @include for-tablet-landscape {
+    max-width: 420px;
+    width: 100%;
+    height: 300px;
+  }
 }
 .click-text {
   width: 500px;
@@ -59,12 +66,17 @@ export default {
   margin-left: 92px;
 }
 .click-text__title {
+  font-family: "Roboto", sans-serif;
   font-size: 40px;
   line-height: 54px;
   letter-spacing: 0.02em;
   color: #ffffff;
   margin: 0;
   padding-bottom: 15px;
+
+  @include for-tablet-landscape {
+    font-size: 30px;
+  }
 }
 .price {
   display: flex;
@@ -76,6 +88,11 @@ export default {
   font-size: 20px;
   line-height: 24px;
   color: #fff;
+  font-family: "Roboto", sans-serif;
+
+  @include for-tablet-landscape {
+    font-size: 16px;
+  }
 }
 .price-before {
   font-size: 20px;
@@ -83,17 +100,22 @@ export default {
   text-decoration-line: line-through;
   color: #afafaf;
   margin-left: 40px;
+
+  @include for-tablet-landscape {
+    font-size: 16px;
+  }
 }
 .buy-set {
   max-width: 160px;
-  width: 100%;
   border-radius: 5px;
-  padding: 10px 35px;
+  padding: 15px 35px;
   font-size: 16px;
   line-height: 28px;
   background: #fdc400;
   color: #171717;
   border: 0;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
 }
 .buy-set:hover {
   background: #fcde7b;

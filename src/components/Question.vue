@@ -7,9 +7,7 @@
         </h2>
         <p class="contuct-us">Contact us!</p>
         <div class="btn">
-          <button class="write" value="111001" name="name" type="submit">
-            Write
-          </button>
+          <a class="write" href="#1"> Write </a>
         </div>
       </div>
       <div class="question-blok__photo">
@@ -28,7 +26,8 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@import "@/scss/mixin";
 .question {
   margin: 0 auto;
   padding: 0;
@@ -36,6 +35,10 @@ export default {
   width: 100%;
   background-color: #171c1f;
   padding-top: 130px;
+
+  @include for-tablet-landscape {
+    padding-top: 90px;
+  }
 }
 .container {
   display: flex;
@@ -53,9 +56,14 @@ export default {
   text-align: start;
 }
 .question-title {
+  font-family: "Roboto", sans-serif;
   font-size: 40px;
   line-height: 54px;
   color: #fff;
+
+  @include for-tablet-landscape {
+    font-size: 30px;
+  }
 }
 .color-text {
   color: #fdc400;
@@ -64,6 +72,11 @@ export default {
   font-size: 16px;
   line-height: 28px;
   color: #fff;
+  font-family: "Roboto", sans-serif;
+
+  @include for-tablet-landscape {
+    font-size: 12px;
+  }
 }
 .btn {
   margin-top: 30px;
@@ -73,11 +86,13 @@ export default {
   width: 100%;
   border: 1px solid #fdc400;
   border-radius: 5px;
-  padding: 10px 35px;
+  padding: 15px 60px;
   font-size: 16px;
   line-height: 28px;
   color: #fff;
   background-color: #161b1e;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
 }
 .write:hover {
   background-color: #fdc400;
@@ -87,6 +102,11 @@ export default {
   width: 100%;
   height: 479px;
   box-sizing: border-box;
+
+  @include for-tablet-landscape {
+    max-width: 500px;
+    height: 400px;
+  }
 }
 .test {
   margin-top: -180px;
@@ -98,6 +118,9 @@ export default {
   height: 0;
   border-bottom: 100px solid #fff;
   border-left: 1440px solid transparent;
-  z-index: 50px;
+
+  @include for-tablet-landscape {
+    border-left: 1040px solid transparent;
+  }
 }
 </style>

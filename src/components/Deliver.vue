@@ -10,7 +10,7 @@
         </div>
         <div class="icon-more">
           <h3 class="deliver-more">Learn more</h3>
-          <a href="#" class="more">
+          <a href="#header" class="more">
             <img class="more" src="/img/more.svg" alt="" />
           </a>
         </div>
@@ -38,7 +38,8 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@import "@/scss/mixin";
 .deliver {
   margin: 0 auto;
   padding: 0;
@@ -70,14 +71,27 @@ export default {
   line-height: 1px;
   letter-spacing: 9px;
   padding-bottom: 100px;
+
+  @include for-tablet-landscape {
+    font-size: 47px;
+  }
 }
 .deliver-text__subtitle {
   margin-top: 75px;
+
+  @include for-tablet-landscape {
+    margin-top: 25px;
+  }
 }
 .deliver-subtitle {
+  font-family: "Roboto", sans-serif;
   font-size: 38px;
   line-height: 54px;
   color: #fff;
+
+  @include for-tablet-landscape {
+    font-size: 30px;
+  }
 }
 .color-text {
   color: #fdc400;
@@ -89,6 +103,10 @@ export default {
 }
 .more {
   margin-left: 20px;
+
+  @include for-tablet-landscape {
+    width: 30px;
+  }
 }
 .deliver-more {
   font-size: 16px;
@@ -96,6 +114,11 @@ export default {
   display: flex;
   align-items: center;
   color: #fff;
+  font-family: "Roboto", sans-serif;
+
+  @include for-tablet-landscape {
+    font-size: 12px;
+  }
 }
 .description {
   max-width: 600px;
@@ -103,10 +126,19 @@ export default {
   box-sizing: border-box;
   text-align: start;
   padding-top: 70px;
+
+  @include for-tablet-landscape {
+    padding-top: 40px;
+  }
 }
 .description-title {
   font-size: 16px;
   line-height: 28px;
   color: #fff;
+  font-family: "Roboto", sans-serif;
+
+  @include for-tablet-landscape {
+    font-size: 12px;
+  }
 }
 </style>

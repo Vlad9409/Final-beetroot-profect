@@ -1,25 +1,25 @@
-@mixin for-phone-only {
-  @media (max-width: 599px) {
+@mixin for-phone {
+  @media (max-width: 560px) {
     @content;
   }
 }
-@mixin for-tablet-portrait-up {
-  @media (min-width: 600px) {
+@mixin for-tablet-portrait {
+  @media (max-width: 727) {
     @content;
   }
 }
-@mixin for-tablet-landscape-up {
-  @media (min-width: 900px) {
+@mixin for-tablet-landscape {
+  @media (max-width: 760px) {
     @content;
   }
 }
-@mixin for-desktop-up {
-  @media (min-width: 1200px) {
+@mixin for-desktop {
+  @media (max-width: 1100px) {
     @content;
   }
 }
-@mixin for-big-desktop-up {
-  @media (min-width: 1800px) {
+@mixin for-big-desktop {
+  @media (max-width: 1920px) {
     @content;
   }
 }

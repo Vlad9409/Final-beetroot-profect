@@ -6,7 +6,7 @@
           Our <span class="color-text">statistics</span>
         </h2>
       </div>
-      <div class="statistik-circle">
+      <div @scroll="handleScroll" class="statistik-circle">
         <div class="circle-big1">
           <div class="text1">1205</div>
           <svg>
@@ -51,9 +51,31 @@
 export default {
   name: "Statistic",
 };
+// data() {
+// let last_known_scroll_position = 0;
+// let ticking = false;
+
+// function doSomething(scroll_pos) {
+//   // Делаем что-нибудь с позицией скролла
+// }
+
+// window.addEventListener('scroll', function(e) {
+//   last_known_scroll_position = window.scrollY;
+
+//   if (!ticking) {
+//     window.requestAnimationFrame(function() {
+//       doSomething(last_known_scroll_position);
+//       ticking = false;
+//     });
+
+//     ticking = true;
+//   }
+// });
+// }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@import "@/scss/mixin";
 h2 {
   margin: 0;
   padding: 0;
@@ -64,6 +86,10 @@ h2 {
   max-width: 1440px;
   width: 100%;
   background: #171c1f;
+
+  @include for-tablet-landscape {
+    padding: 90px 0 0 0;
+  }
 }
 .container {
   margin: 0 auto;
@@ -71,9 +97,14 @@ h2 {
   width: 100%;
 }
 .statistic-title__text {
+  font-family: "Roboto", sans-serif;
   font-size: 40px;
   line-height: 54px;
   color: #fff;
+
+  @include for-tablet-landscape {
+    font-size: 30px;
+  }
 }
 .color-text {
   color: #fdc400;
@@ -112,9 +143,16 @@ h2 {
   stroke-dashoffset: 60;
   transform: rotate(336deg);
   transform-origin: 50% 50%;
-  animation: big 1.5s ease-in-out;
+  animation: big 1.5s ease-in-out both;
 }
-
+@keyframes big {
+  from {
+    stroke-dashoffset: 326.56;
+  }
+  to {
+    stroke-dashoffset: 60;
+  }
+}
 .circle-big1 .text1 {
   position: absolute;
   width: 100%;
@@ -129,6 +167,7 @@ h2 {
   text-align: center;
   font-size: 24px;
   color: #fff;
+  font-family: "Roboto", sans-serif;
 }
 
 .circle-big2 {
@@ -158,7 +197,15 @@ h2 {
   stroke-dashoffset: 85;
   transform: rotate(365deg);
   transform-origin: 50% 50%;
-  animation: big 1.5s ease-in-out;
+  animation: big2 1.5s ease-in-out;
+}
+@keyframes big2 {
+  from {
+    stroke-dashoffset: 325;
+  }
+  to {
+    stroke-dashoffset: 85;
+  }
 }
 
 .circle-big2 .text2 {
@@ -204,7 +251,15 @@ h2 {
   stroke-dashoffset: 275;
   transform: rotate(90deg);
   transform-origin: 50% 50%;
-  animation: big 1.5s ease-in-out;
+  animation: big3 1.5s ease-in-out;
+}
+@keyframes big3 {
+  from {
+    stroke-dashoffset: 325;
+  }
+  to {
+    stroke-dashoffset: 275;
+  }
 }
 
 .circle-big3 .text3 {
@@ -237,13 +292,27 @@ h2 {
   font-size: 18px;
   line-height: 26px;
   color: #fff;
+
+  @include for-tablet-landscape {
+    font-size: 14px;
+  }
 }
 
 .circle-text1 {
   margin-right: 120px;
+
+  @include for-tablet-landscape {
+    margin-right: 50px;
+    padding-left: 30px;
+  }
 }
 .circle-text3 {
   margin-left: 110px;
+
+  @include for-tablet-landscape {
+    margin-left: 50px;
+    margin-right: 20px;
+  }
 }
 
 hr {

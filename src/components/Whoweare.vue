@@ -14,7 +14,7 @@
 
           <div class="icon-more">
             <h3 class="whowe-more">Learn more</h3>
-            <a href="#" class="more">
+            <a href="#header" class="more">
               <img class="more" src="/img/more.svg" alt="" />
             </a>
           </div>
@@ -33,7 +33,8 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@import "@/scss/mixin";
 .icon-more {
   display: flex;
   flex-direction: row;
@@ -41,6 +42,10 @@ export default {
 }
 .more {
   margin-left: 20px;
+
+  @include for-tablet-landscape {
+    width: 30px;
+  }
 }
 .whowe {
   margin: 0 auto;
@@ -63,17 +68,33 @@ export default {
   margin-right: 100px;
   box-sizing: border-box;
   text-align: start;
+
+  @include for-tablet-landscape {
+    width: 365px;
+    margin-right: 100px;
+    margin-left: 30px;
+  }
 }
 .whowe-title {
+  font-family: "Roboto", sans-serif;
   font-size: 40px;
   line-height: 54px;
   color: #fff;
   letter-spacing: 0.02em;
+
+  @include for-tablet-landscape {
+    font-size: 30px;
+  }
 }
 .whowe-subtitle {
   font-size: 16px;
   line-height: 28px;
   color: #fff;
+  font-family: "Roboto", sans-serif;
+
+  @include for-tablet-landscape {
+    font-size: 12px;
+  }
 }
 
 .whowe-more {
@@ -82,10 +103,13 @@ export default {
   display: flex;
   align-items: center;
   color: #fff;
+
+  @include for-tablet-landscape {
+    font-size: 12px;
+  }
 }
 .whowe-blok {
-  /* max-width: 737px;
-  width: 100%; */
+  max-width: 737px;
   height: 399;
   box-sizing: border-box;
 }
@@ -93,5 +117,8 @@ export default {
   max-width: 737px;
   width: 100%;
   height: 399;
+  @include for-tablet-landscape {
+    font-size: 12px;
+  }
 }
 </style>
