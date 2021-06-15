@@ -119,8 +119,8 @@ export default {
   border-bottom: 100px solid #fff;
   border-left: 1440px solid transparent;
 
-  @include for-tablet-landscape {
-    border-left: 1040px solid transparent;
+  @include for-desktop {
+    border-left: 954px solid transparent;
   }
 }
 </style>

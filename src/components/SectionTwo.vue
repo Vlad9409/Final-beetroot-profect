@@ -77,6 +77,15 @@ export default {
       slidesToShow: 4,
       slidesToScroll: 1,
       infinite: true,
+      responsive: [
+        {
+          breakpoint: 1100, // максимальная ширина экрана
+          settings: {
+            slidesToShow: 3, // показывать по 2 слайда
+            slidesToScroll: 1, // скроллить по 2 слайда
+          },
+        },
+      ],
     });
   },
 };
@@ -84,6 +93,16 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/scss/mixin";
+
+.slick-prev:before,
+.slick-next:before {
+  font-size: 70px;
+  color: black;
+  left: -100px;
+  top: -13px;
+  background: white;
+  position: absolute;
+}
 h2 {
   margin: 0;
   padding: 0;
@@ -126,7 +145,7 @@ h2 {
   font-size: 16px;
   line-height: 28px;
   color: #fff;
-  font-family: "Roboto", sans-serif;
+  font-family: "Museo Sans Cyrl", sans-serif;
 
   @include for-tablet-landscape {
     font-size: 12px;

@@ -63,6 +63,7 @@ export default {
   }
 }
 .cinema-title {
+  font-family: "Museo Sans Cyrl", sans-serif;
   position: absolute;
   color: #fff;
   opacity: 0.05;
@@ -99,7 +100,7 @@ export default {
   font-size: 16px;
   line-height: 28px;
   color: #fff;
-  font-family: "Roboto", sans-serif;
+  font-family: "Museo Sans Cyrl", sans-serif;
 
   @include for-tablet-landscape {
     font-size: 12px;

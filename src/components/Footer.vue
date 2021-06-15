@@ -60,7 +60,7 @@ export default {
   justify-content: space-between;
   align-items: center;
 
-  @include for-tablet-landscape {
+  @include for-desktop {
     text-align: center;
     margin: 0 auto;
   }
@@ -93,7 +93,7 @@ export default {
   align-items: center;
   text-decoration: none;
 
-  @include for-tablet-landscape {
+  @include for-desktop {
     display: none;
   }
 }
@@ -126,7 +126,7 @@ export default {
   background-color: #fff;
   text-decoration: none;
 
-  @include for-tablet-landscape {
+  @include for-desktop {
     display: none;
   }
 }

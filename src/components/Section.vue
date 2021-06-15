@@ -59,6 +59,7 @@ export default {
   color: #fdc400;
 }
 .blog-text__title {
+  font-family: "Museo Sans Cyrl", sans-serif;
   position: absolute;
   color: #fff;
   opacity: 0.05;
@@ -96,7 +97,7 @@ export default {
   line-height: 28px;
   color: #fff;
   letter-spacing: 1px;
-  font-family: "Roboto", sans-serif;
+  font-family: "Museo Sans Cyrl", sans-serif;
 
   @include for-tablet-landscape {
     font-size: 12px;

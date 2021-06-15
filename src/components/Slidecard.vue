@@ -46,6 +46,8 @@ export default {
   }
 }
 .card-title__name {
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
   font-size: 20px;
   line-height: 20px;
   color: #fff;
@@ -55,6 +57,8 @@ export default {
   }
 }
 .card-title__description {
+  font-family: "Museo Sans Cyrl", sans-serif;
+  font-weight: 300;
   font-size: 14px;
   line-height: 28px;
   color: #fff;
@@ -65,6 +69,7 @@ export default {
   flex-direction: row;
 }
 .price-real {
+  font-family: "Museo Sans Cyrl", sans-serif;
   text-align: start;
   font-size: 20px;
   line-height: 24px;
@@ -75,7 +80,8 @@ export default {
   }
 }
 .price-before {
-  font-size: 20px;
+  font-family: "Museo Sans Cyrl", sans-serif;
+  font-weight: 300;
   line-height: 24px;
   text-decoration-line: line-through;
   color: #afafaf;

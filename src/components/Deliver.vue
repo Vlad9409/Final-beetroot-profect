@@ -64,6 +64,7 @@ export default {
   text-align: start;
 }
 .deliver-title {
+  font-family: "Museo Sans Cyrl", sans-serif;
   position: absolute;
   color: #fff;
   opacity: 0.05;
@@ -114,7 +115,7 @@ export default {
   display: flex;
   align-items: center;
   color: #fff;
-  font-family: "Roboto", sans-serif;
+  font-family: "Museo Sans Cyrl", sans-serif;
 
   @include for-tablet-landscape {
     font-size: 12px;

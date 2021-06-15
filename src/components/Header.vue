@@ -166,7 +166,8 @@ export default {
   border-bottom: 1px solid #fdc400;
 }
 .burger-title {
-  font-family: "Roboto", sans-serif;
+  font-family: "Museo Sans Cyrl", sans-serif;
+  font-weight: 300;
   text-decoration: none;
   color: #fff;
   font-size: 14px;
@@ -193,7 +194,7 @@ export default {
   z-index: 10;
   font-family: "Roboto", sans-serif;
 
-  @include for-tablet-landscape {
+  @include for-desktop {
     display: none;
   }
 }
@@ -234,6 +235,7 @@ export default {
   box-sizing: border-box;
 }
 .tittle-text__main {
+  font-family: "Museo Sans Cyrl", sans-serif;
   position: absolute;
   color: #fff;
   opacity: 0.05;
